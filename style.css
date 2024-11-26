@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #2c3e50;
+}
+
+.titre{
+    color:rgb(0, 0, 0);
+    justify-self: center;
+    margin-top: 20px;
+}
+
+.section{
+    border: 1px solid black;
+    height: 120vh;
+    border-radius: 10px;
+}
+
+.grid-container{
+    display: flex; 
+    justify-content: space-between; 
+    gap:10px;
+    margin:10px;
+}
+
+h3 {
+    text-align: center;
+    color: #bdc5c7;
+}
+
+.form{
+    display: flex; 
+    flex-direction: column;
+    gap: 10px; 
+    background-color: #323e4b;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+label {
+    color: #bdc3c7;
+}
+
+input, select {
+    width: 100%;
+    padding: 5px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    border: 1px solid #7f8c8d;
+    border-radius: 5px;
+}
+
+.statistique{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+#add {
+    padding: 5px;
+    background-color: #64769a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#terrain{
+    width:100vh;
+    background-image: url(./images/stadium_background.jpg);
+    
+    width: 100%; 
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+span{
+    font-size: 8px;
+    margin:0 5px;
+}
+
+
