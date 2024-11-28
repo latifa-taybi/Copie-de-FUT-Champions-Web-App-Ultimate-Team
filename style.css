@@ -15,8 +15,8 @@ body{
 }
 
 .section{
-    border: 1px solid black;
-    height: 120vh;
+    /* border: 1px solid black; */
+    height: auto;
     border-radius: 10px;
 }
 
@@ -133,13 +133,4 @@ span{
 .stats{
     display: grid; 
     grid-template-columns: repeat(2,1fr);
-}
-
-.hidden {
-    display: none;
-}
-
-/* Affiche les éléments en grille */
-.visible {
-    display: grid;
 }
