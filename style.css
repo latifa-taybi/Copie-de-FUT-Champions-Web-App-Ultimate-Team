@@ -55,10 +55,14 @@ input, select {
     border-radius: 5px;
 }
 
-.statistique{
+.statistique,.statistiqueGK{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+}
+
+.statistiqueGK{
+    display:none;
 }
 
 .stat {
@@ -91,4 +95,51 @@ span{
     margin:0 5px;
 }
 
+.contain{
+    justify-self: center;
+}
 
+.card{
+    position: relative; 
+    max-width: 120px;
+}
+
+.informations{
+    position: absolute; 
+    top: 0; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.infoimg{
+    display:flex; 
+    align-items: center;
+    margin:23px 20px 0 25px;
+}
+
+.infos{
+    display: flex; 
+    flex-direction: column; 
+    gap:3px;
+}
+
+.nomJoueur{
+    font-size: 15px; 
+    margin-bottom: 0;
+}
+
+.stats{
+    display: grid; 
+    grid-template-columns: repeat(2,1fr);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Affiche les éléments en grille */
+.visible {
+    display: grid;
+}

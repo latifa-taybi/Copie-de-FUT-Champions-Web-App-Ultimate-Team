@@ -11,7 +11,7 @@
     <h1 class="titre"> FUT Champions </h1>
     <section class="grid-container">
       <section class="section" id="formulaire">
-        <form>
+        <form class="form">
           <div class="form">
               <h3>Entrer les données du joueur</h3>
                   <label for="name">Nom complet</label>
@@ -51,6 +51,8 @@
                   <input type="url" id="flag" placeholder="URL du flag" required>
                   <label for="logo">Logo</label>
                   <input type="url" id="logo" placeholder="URL du logo" required>
+                  <label for="rating">Rating</label>
+                  <input type="number" id="rating" placeholder="Rating" required>
               <div class="statistique">
                   <div class="stat">
                       <label for="pace">Pace</label>
@@ -77,56 +79,371 @@
                       <input type="number" id="physical" placeholder="Physical" required>
                   </div>
               </div>
+
+
+
+              <div class="statistiqueGK" style="display:none;">
+                <div class="stat">
+                    <label for="diving">Diving</label>
+                    <input type="number" id="diving" placeholder="Diving" required>
+                </div>
+                <div class="stat">
+                    <label for="handling">Handling</label>
+                    <input type="number" id="handling" placeholder="Handling" required>
+                </div>
+                <div class="stat">
+                    <label for="kicking">Kicking</label>
+                    <input type="number" id="kicking" placeholder="Kicking" required>
+                </div>
+                <div class="stat">
+                    <label for="reflexes">Reflexes</label>
+                    <input type="number" id="reflexes" placeholder="Reflexes" required>
+                </div>
+                <div class="stat">
+                    <label for="speed">Speed</label>
+                    <input type="number" id="speed" placeholder="Speed" required>
+                </div>
+                <div class="stat">
+                    <label for="positioning">Positioning</label>
+                    <input type="number" id="positioning" placeholder="Positioning" required>
+                </div>
+            </div>
+
+
+
               <button type="submit" id="add">Ajouter</button>
           </div>
       </form>
       </section>
-      <section class="section" id="terrain"  >
+      <section class="section" id="terrain">
+
+
+
+
+
+
+
         <div style="display: flex; justify-content: space-evenly;" >
-          <img src="./images/carte.png" alt="carte" width="120vh" style="transform:translateY(20px) ;">
-          <img src="./images/carte.png" alt="carte" width="120vh" >
-          <img src="./images/carte.png" alt="carte" width="120vh" style="transform:translateY(20px) ;">
-        </div>
-        <div style="display: flex; justify-content: center; gap:3rem " >
-          <img src="./images/carte.png" alt="carte" width="120vh" style="transform:translateY(20px) ;">
-          <img src="./images/carte.png" alt="carte" width="120vh" style="transform:translateY(-10px) ;">
-          <img src="./images/carte.png" alt="carte" width="120vh" style="transform:translateY(20px) ;">
-        </div>
-        <div style="display: flex; justify-content: space-between; ">
-          <div style="display:flex;gap:4rem ">
-            <img src="./images/carte.png" alt="carte" width="120vh" >
-            <img src="./images/carte.png" alt="carte" width="120vh" style="transform:translateY(20px) ;">
-          </div>
-          <div style="display:flex;gap:4rem ">
-            <img src="./images/carte.png" alt="carte" width="120vh" style="transform:translateY(20px) ;">
+          <div id="carteLW" style="position: relative; max-width: 120px; transform:translateY(20px) ;">
             <img src="./images/carte.png" alt="carte" width="120vh">
-          </div>
-        </div>
-        <div style="justify-self: center;">
-          <div id="card" style="position: relative; max-width: 120px;">
-            <img src="./images/carte.png" alt="carte" width="100%">
-            <div id="informations" style="position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-              <div style="display:flex; align-items: center;margin:23px 20px 0 25px">
-                <div id="infos" style="display: flex; flex-direction: column; gap:3px">
-                  <span>90</span>
-                  <span>ST</span>
-                  <img src="https://cdn.sofifa.net/flags/ar.png" width="15rem">
-                  <img src="https://cdn.sofifa.net/meta/team/239235/120.png" width="15rem">
+            <div class="informations" style="position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <div class="infoimg" style="display:flex; align-items: center;margin:23px 20px 0 25px">
+                <div class="infos" style="display: flex; flex-direction: column; gap:3px">
+                  <span class="ratingJoueur"></span>
+                  <span class="positionJoueur"></span>
+                  <img id="flagImg" src="" width="15rem">
+                  <img id="logoImg" src="" width="15rem">
                 </div>
-                <div >
-                  <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="" width="100%">
+                <div class="img">
+                  <img id="photoImg" src="" alt="" width="100%">
                 </div>
               </div>
-              <div>
-                <p style="font-size: 15px; margin-bottom: 0;">Lionel Messi</p>
-                <div style="display: grid; grid-template-columns: repeat(2,1fr);">
-                  <span>93</span>
-                  <span>30</span>
-                  <span>40</span>
-                  <span>50</span>
-                  <span>33</span>
-                  <span>20</span>
+              <div class="nomStat">
+                <p class="nomJoueur" style="font-size: 15px; margin-bottom: 0;"></p>
+                <div class="stats" style="display: grid; grid-template-columns: repeat(2,1fr);">
+                  <span class="paceJoueur"></span>
+                  <span class="shootingJoueur"></span>
+                  <span class="passingJoueur"></span>
+                  <span class="dribblingJoueur"></span>
+                  <span class="defendingJoueur"></span>
+                  <span class="physicalJoueur"></span>
                 </div>
+              </div>
+            </div>
+          </div>
+            <div id="carteST" style="position: relative; max-width: 120px;">
+              <img src="./images/carte.png" alt="carte" width="120vh">
+              <div class="informations" style="position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <div class="infoimg" style="display:flex; align-items: center;margin:23px 20px 0 25px">
+                  <div class="infos" style="display: flex; flex-direction: column; gap:3px">
+                    <span class="ratingJoueur"></span>
+                    <span class="positionJoueur"></span>
+                    <img id="flagImg" src="" width="15rem">
+                    <img id="logoImg" src="" width="15rem">
+                  </div>
+                  <div class="img">
+                    <img id="photoImg" src="" alt="" width="100%">
+                  </div>
+                </div>
+                <div class="nomStat">
+                  <p class="nomJoueur" style="font-size: 15px; margin-bottom: 0;"></p>
+                  <div class="stats" style="display: grid; grid-template-columns: repeat(2,1fr);">
+                    <span class="paceJoueur"></span>
+                    <span class="shootingJoueur"></span>
+                    <span class="passingJoueur"></span>
+                    <span class="dribblingJoueur"></span>
+                    <span class="defendingJoueur"></span>
+                    <span class="physicalJoueur"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="carteRW" style="position: relative; max-width: 120px; transform:translateY(20px) ;">
+              <img src="./images/carte.png" alt="carte" width="120vh">
+              <div class="informations" style="position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <div class="infoimg" style="display:flex; align-items: center;margin:23px 20px 0 25px">
+                  <div class="infos" style="display: flex; flex-direction: column; gap:3px">
+                    <span class="ratingJoueur"></span>
+                    <span class="positionJoueur"></span>
+                    <img id="flagImg" src="" width="15rem">
+                    <img id="logoImg" src="" width="15rem">
+                  </div>
+                  <div class="img">
+                    <img id="photoImg" src="" alt="" width="100%">
+                  </div>
+                </div>
+                <div class="nomStat">
+                  <p class="nomJoueur" style="font-size: 15px; margin-bottom: 0;"></p>
+                  <div class="stats" style="display: grid; grid-template-columns: repeat(2,1fr);">
+                    <span class="paceJoueur"></span>
+                    <span class="shootingJoueur"></span>
+                    <span class="passingJoueur"></span>
+                    <span class="dribblingJoueur"></span>
+                    <span class="defendingJoueur"></span>
+                    <span class="physicalJoueur"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+
+        <div style="display: flex; justify-content: center; gap:3rem " >
+          <div id="carteCM" style="position: relative; max-width: 120px; transform:translateY(20px) ;">
+            <img src="./images/carte.png" alt="carte" width="120vh">
+            <div class="informations" style="position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <div class="infoimg" style="display:flex; align-items: center;margin:23px 20px 0 25px">
+                <div class="infos" style="display: flex; flex-direction: column; gap:3px">
+                  <span class="ratingJoueur"></span>
+                  <span class="positionJoueur"></span>
+                  <img id="flagImg" src="" width="15rem">
+                  <img id="logoImg" src="" width="15rem">
+                </div>
+                <div class="img">
+                  <img id="photoImg" src="" alt="" width="100%">
+                </div>
+              </div>
+              <div class="nomStat">
+                <p class="nomJoueur" style="font-size: 15px; margin-bottom: 0;"></p>
+                <div class="stats" style="display: grid; grid-template-columns: repeat(2,1fr);">
+                  <span class="paceJoueur"></span>
+                  <span class="shootingJoueur"></span>
+                  <span class="passingJoueur"></span>
+                  <span class="dribblingJoueur"></span>
+                  <span class="defendingJoueur"></span>
+                  <span class="physicalJoueur"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div id="carteCM" style="position: relative; max-width: 120px; transform:translateY(-10px) ;">
+            <img src="./images/carte.png" alt="carte" width="120vh">
+            <div class="informations" style="position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <div class="infoimg" style="display:flex; align-items: center;margin:23px 20px 0 25px">
+                <div class="infos" style="display: flex; flex-direction: column; gap:3px">
+                  <span class="ratingJoueur"></span>
+                  <span class="positionJoueur"></span>
+                  <img id="flagImg" src="" width="15rem">
+                  <img id="logoImg" src="" width="15rem">
+                </div>
+                <div class="img">
+                  <img id="photoImg" src="" alt="" width="100%">
+                </div>
+              </div>
+              <div class="nomStat">
+                <p class="nomJoueur" style="font-size: 15px; margin-bottom: 0;"></p>
+                <div class="stats" style="display: grid; grid-template-columns: repeat(2,1fr);">
+                  <span class="paceJoueur"></span>
+                  <span class="shootingJoueur"></span>
+                  <span class="passingJoueur"></span>
+                  <span class="dribblingJoueur"></span>
+                  <span class="defendingJoueur"></span>
+                  <span class="physicalJoueur"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+            <div id="carteCM" style="position: relative; max-width: 120px; transform:translateY(20px) ;">
+            <img src="./images/carte.png" alt="carte" width="120vh">
+            <div class="informations" style="position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <div class="infoimg" style="display:flex; align-items: center;margin:23px 20px 0 25px">
+                <div class="infos" style="display: flex; flex-direction: column; gap:3px">
+                  <span class="ratingJoueur"></span>
+                  <span class="positionJoueur"></span>
+                  <img id="flagImg" src="" width="15rem">
+                  <img id="logoImg" src="" width="15rem">
+                </div>
+                <div class="img">
+                  <img id="photoImg" src="" alt="" width="100%">
+                </div>
+              </div>
+              <div class="nomStat">
+                <p class="nomJoueur" style="font-size: 15px; margin-bottom: 0;"></p>
+                <div class="stats" style="display: grid; grid-template-columns: repeat(2,1fr);">
+                  <span class="paceJoueur"></span>
+                  <span class="shootingJoueur"></span>
+                  <span class="passingJoueur"></span>
+                  <span class="dribblingJoueur"></span>
+                  <span class="defendingJoueur"></span>
+                  <span class="physicalJoueur"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div style="display: flex; justify-content: space-between; ">
+          <div style="display:flex;gap:4rem ">
+            <div id="carteLB" style="position: relative; max-width: 120px;">
+              <img src="./images/carte.png" alt="carte" width="120vh">
+              <div class="informations" style="position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <div class="infoimg" style="display:flex; align-items: center;margin:23px 20px 0 25px">
+                  <div class="infos" style="display: flex; flex-direction: column; gap:3px">
+                    <span class="ratingJoueur"></span>
+                    <span class="positionJoueur"></span>
+                    <img id="flagImg" src="" width="15rem">
+                    <img id="logoImg" src="" width="15rem">
+                  </div>
+                  <div class="img">
+                    <img id="photoImg" src="" alt="" width="100%">
+                  </div>
+                </div>
+                <div class="nomStat">
+                  <p class="nomJoueur" style="font-size: 15px; margin-bottom: 0;"></p>
+                  <div class="stats" style="display: grid; grid-template-columns: repeat(2,1fr);">
+                    <span class="paceJoueur"></span>
+                    <span class="shootingJoueur"></span>
+                    <span class="passingJoueur"></span>
+                    <span class="dribblingJoueur"></span>
+                    <span class="defendingJoueur"></span>
+                    <span class="physicalJoueur"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div id="carteCB" style="position: relative; max-width: 120px; transform:translateY(20px) ;">
+              <img src="./images/carte.png" alt="carte" width="120vh">
+              <div class="informations" style="position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <div class="infoimg" style="display:flex; align-items: center;margin:23px 20px 0 25px">
+                  <div class="infos" style="display: flex; flex-direction: column; gap:3px">
+                    <span class="ratingJoueur"></span>
+                    <span class="positionJoueur"></span>
+                    <img id="flagImg" src="" width="15rem">
+                    <img id="logoImg" src="" width="15rem">
+                  </div>
+                  <div class="img">
+                    <img id="photoImg" src="" alt="" width="100%">
+                  </div>
+                </div>
+                <div class="nomStat">
+                  <p class="nomJoueur" style="font-size: 15px; margin-bottom: 0;"></p>
+                  <div class="stats" style="display: grid; grid-template-columns: repeat(2,1fr);">
+                    <span class="paceJoueur"></span>
+                    <span class="shootingJoueur"></span>
+                    <span class="passingJoueur"></span>
+                    <span class="dribblingJoueur"></span>
+                    <span class="defendingJoueur"></span>
+                    <span class="physicalJoueur"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div style="display:flex;gap:4rem ">
+            <div id="carteCB" style="position: relative; max-width: 120px; transform:translateY(20px) ;">
+              <img src="./images/carte.png" alt="carte" width="120vh">
+              <div class="informations" style="position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <div class="infoimg" style="display:flex; align-items: center;margin:23px 20px 0 25px">
+                  <div class="infos" style="display: flex; flex-direction: column; gap:3px">
+                    <span class="ratingJoueur"></span>
+                    <span class="positionJoueur"></span>
+                    <img id="flagImg" src="" width="15rem">
+                    <img id="logoImg" src="" width="15rem">
+                  </div>
+                  <div class="img">
+                    <img id="photoImg" src="" alt="" width="100%">
+                  </div>
+                </div>
+                <div class="nomStat">
+                  <p class="nomJoueur" style="font-size: 15px; margin-bottom: 0;"></p>
+                  <div class="stats" style="display: grid; grid-template-columns: repeat(2,1fr);">
+                    <span class="paceJoueur"></span>
+                    <span class="shootingJoueur"></span>
+                    <span class="passingJoueur"></span>
+                    <span class="dribblingJoueur"></span>
+                    <span class="defendingJoueur"></span>
+                    <span class="physicalJoueur"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div id="carteRB" style="position: relative; max-width: 120px; ">
+              <img src="./images/carte.png" alt="carte" width="120vh">
+              <div class="informations" style="position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <div class="infoimg" style="display:flex; align-items: center;margin:23px 20px 0 25px">
+                  <div class="infos" style="display: flex; flex-direction: column; gap:3px">
+                    <span class="ratingJoueur"></span>
+                    <span class="positionJoueur"></span>
+                    <img id="flagImg" src="" width="15rem">
+                    <img id="logoImg" src="" width="15rem">
+                  </div>
+                  <div class="img">
+                    <img id="photoImg" src="" alt="" width="100%">
+                  </div>
+                </div>
+                <div class="nomStat">
+                  <p class="nomJoueur" style="font-size: 15px; margin-bottom: 0;"></p>
+                  <div class="stats" style="display: grid; grid-template-columns: repeat(2,1fr);">
+                    <span class="paceJoueur"></span>
+                    <span class="shootingJoueur"></span>
+                    <span class="passingJoueur"></span>
+                    <span class="dribblingJoueur"></span>
+                    <span class="defendingJoueur"></span>
+                    <span class="physicalJoueur"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        
+        <div id="carteRB" style="position: relative; max-width: 120px; justify-self: center; ">
+          <img src="./images/carte.png" alt="carte" width="120vh">
+          <div class="informations" style="position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="infoimg" style="display:flex; align-items: center;margin:23px 20px 0 25px">
+              <div class="infos" style="display: flex; flex-direction: column; gap:3px">
+                <span class="ratingJoueur"></span>
+                <span class="positionJoueur"></span>
+                <img id="flagImg" src="" width="15rem">
+                <img id="logoImg" src="" width="15rem">
+              </div>
+              <div class="img">
+                <img id="photoImg" src="" alt="" width="100%">
+              </div>
+            </div>
+            <div class="nomStat">
+              <p class="nomJoueur" style="font-size: 15px; margin-bottom: 0;"></p>
+              <div class="stats" style="display: grid; grid-template-columns: repeat(2,1fr);">
+                <span class="divingJoueur"></span>
+                <span class="handlingJoueur"></span>
+                <span class="kickingJoueur"></span>
+                <span class="reflexesJoueur"></span>
+                <span class="speedJoueur"></span>
+                <span class="positioningJoueur"></span>
               </div>
             </div>
           </div>
@@ -135,8 +452,6 @@
     </section>
     
 
-
-    
     <script src="main.js"></script>
 </body>
   
