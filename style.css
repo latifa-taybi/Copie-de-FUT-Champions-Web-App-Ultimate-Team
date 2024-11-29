@@ -134,3 +134,26 @@ span{
     display: grid; 
     grid-template-columns: repeat(2,1fr);
 }
+
+.button{
+    justify-content: space-around; 
+    gap: 50px; 
+    position: absolute; 
+    top: 10px;
+    display:none;
+}
+
+.joueur:hover .button{
+    display:flex;
+}
+
+.joueur:hover{
+    background-color: #77c0b88b;
+    border-radius: 10px;
+}
+
+.edit, .delete{
+    width: 15%;
+    cursor: pointer; 
+}
+
