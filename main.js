@@ -24,7 +24,7 @@ const counter = {
     "CML": 0,
     "CM": 0,
     "CBL": 0,
-    "CBM": 0,
+    "CBR": 0,
     "LB": 0,
     "RB": 0,
     "LW": 0,
@@ -55,9 +55,23 @@ const dribbling = document.getElementById("dribbling");
 const defending = document.getElementById("defending");
 const physical = document.getElementById("physical");
 
+
+function validation() {
+    const stats = [diving, handling, kicking, reflexes, speed, positioning, pace, shooting, passing, dribbling, defending, physical];
+    for (let i = 0; i < stats.length; i++)  {
+        if (stats[i].value < 1 || stats[i].value > 99) {
+            alert("Toutes les valeurs doivent être entre 1 et 99 !");
+            return false;
+        }
+    }
+    return true; 
+}
+
+
 //-----------------------------Fonction d'ajout des joureurs---------------------------------------------//
 
 function ajout(){
+
     const name = document.getElementById("name");
     const nomExiste = document.querySelectorAll('.nomJoueur');
     for (let i = 0; i < nomExiste.length; i++) {
@@ -66,12 +80,13 @@ function ajout(){
             return;
         }
     }
+    validation()
     counter[position.value]++;
     if (counter[position.value] > 1) {
         const carteReserve = document.querySelectorAll(".carteReserve")
         for (let i = 0; i < carteReserve.length; i++) {
             const card = carteReserve[i];
-
+            console.log('bvfecs')
             const infos = card.querySelector(".infos")
             const ratingJoueur = infos.querySelector('.ratingJoueur')
             const positionJoueur = infos.querySelector('.positionJoueur')
@@ -91,7 +106,7 @@ function ajout(){
             if (ratingJoueur.textContent === '' &&
                 positionJoueur.textContent === '' &&
                 nomJoueur.textContent === '' ){
-                modifier.src = './images/editer (1).png'
+                modifier.src = './images/pen.png'
                 supprimer.src = './images/supprimer (1).png'
                 ratingJoueur.textContent = rating.value
                 positionJoueur.textContent = position.value
@@ -131,6 +146,8 @@ function ajout(){
                     dribblingJoueur.textContent = dribbling.value;
                     defendingJoueur.textContent = defending.value;
                     physicalJoueur.textContent = physical.value;
+                    
+                    
                 }
                 document.querySelector(".form").reset();
                 return;
@@ -162,7 +179,7 @@ function ajout(){
         logoImg.src = logo.value;
         photoImg.src = photo.value;
         nomJoueur.textContent = name.value;
-        modifier.src = './images/editer (1).png'
+        modifier.src = './images/pen.png'
         supprimer.src = './images/supprimer (1).png'
 
         if (position.value === "GK") {
@@ -197,8 +214,14 @@ function ajout(){
         document.querySelector(".form").reset();
     }
 };
+
+
 add.addEventListener('click',(event)=>{
     event.preventDefault();
+    if(add.textContent === "modifier"){
+        add.textContent = "ajouter"
+    }
+    
     ajout();
 })
 
@@ -301,7 +324,7 @@ edits.forEach(edit=>{
             const positioningJoueur = joueur.querySelector(".positioningJoueur").textContent;
 
             diving.value=divingJoueur;
-            diving.value=handlingJoueur;
+            handling.value=handlingJoueur;
             kicking.value=kickingJoueur;
             reflexes.value=reflexesJoueur;
             speed.value=speedJoueur;
@@ -321,6 +344,7 @@ edits.forEach(edit=>{
             defending.value=defendingJoueur;
             physical.value=physicalJoueur;
         }
+        add.textContent = "modifier"
         suppression(event);
     })
 })

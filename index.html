@@ -15,84 +15,99 @@
       <form class="form">
         <div class="form">
           <h3>Entrer les données du joueur</h3>
-          <label for="name">Nom complet</label>
-          <input type="text" id="name" placeholder="Nom complet" required>
-          <label for="photo">Photo</label>
-          <input type="url" id="photo" placeholder="URL de la photo" required>
-          <label for="position">Position</label>
-          <select id="position" required>
-            <option value="GK">GK</option>
-            <option value="CBR">CBR</option>
-            <option value="CBL">CBL</option>
-            <option value="LB">LB</option>
-            <option value="RB">RB</option>
-            <option value="CMR">CMR</option>
-            <option value="CM">CM</option>
-            <option value="CML">CML</option>
-            <option value="LW">LW</option>
-            <option value="RW">RW</option>
-            <option value="ST">ST</option>
-          </select>
-          <label for="flag">Flag</label>
-          <input type="url" id="flag" placeholder="URL du flag" required>
-          <label for="logo">Logo</label>
-          <input type="url" id="logo" placeholder="URL du logo" required>
-          <label for="rating">Rating</label>
-          <input type="number" id="rating" placeholder="Rating" required>
+          <div>
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" placeholder="Nom complet" required>
+          </div>
+          <div>
+            <label for="photo">Photo</label>
+            <input type="url" id="photo" placeholder="URL de la photo" required>
+          </div>
+          <div>
+            <label for="position">Position</label>
+            <select id="position" required>
+              <option value="GK">GK</option>
+              <option value="CBR">CBR</option>
+              <option value="CBL">CBL</option>
+              <option value="LB">LB</option>
+              <option value="RB">RB</option>
+              <option value="CMR">CMR</option>
+              <option value="CM">CM</option>
+              <option value="CML">CML</option>
+              <option value="LW">LW</option>
+              <option value="RW">RW</option>
+              <option value="ST">ST</option>
+            </select>
+          </div>
+          <div>
+            <label for="flag">Flag</label>
+            <input type="url" id="flag" placeholder="URL du flag" required>
+          </div>
+          <div>
+            <label for="logo">Logo</label>
+            <input type="url" id="logo" placeholder="URL du logo" required>
+          </div>
+          <div>
+            <label for="rating">Rating</label>
+            <input type="number" id="rating" placeholder="Rating" required>
+          </div>
           <div class="statistique">
             <div class="stat">
               <label for="pace">Pace</label>
-              <input type="number" id="pace" placeholder="Pace" min="1" max="99" required>
+              <input class="inputStat" type="number" id="pace" placeholder="Pace" min="1" max="99" required>
             </div>
             <div class="stat">
               <label for="shooting">Shooting</label>
-              <input type="number" id="shooting" placeholder="Shooting" required>
+              <input class="inputStat" type="number" id="shooting" placeholder="Shooting" required>
             </div>
             <div class="stat">
               <label for="passing">Passing</label>
-              <input type="number" id="passing" placeholder="Passing" required>
+              <input class="inputStat" type="number" id="passing" placeholder="Passing" required>
             </div>
             <div class="stat">
               <label for="dribbling">Dribbling</label>
-              <input type="number" id="dribbling" placeholder="Dribbling" required>
+              <input class="inputStat" type="number" id="dribbling" placeholder="Dribbling" required>
             </div>
             <div class="stat">
               <label for="defending">Defending</label>
-              <input type="number" id="defending" placeholder="Defending" required>
+              <input class="inputStat" type="number" id="defending" placeholder="Defending" required>
             </div>
             <div class="stat">
               <label for="physical">Physical</label>
-              <input type="number" id="physical" placeholder="Physical" required>
+              <input class="inputStat" type="number" id="physical" placeholder="Physical" required>
             </div>
           </div>
 
           <div class="statistiqueGK" style="display:none;">
             <div class="stat">
               <label for="diving">Diving</label>
-              <input type="number" id="diving" placeholder="Diving" required>
+              <input class="inputStat" type="number" id="diving" placeholder="Diving" required>
             </div>
             <div class="stat">
               <label for="handling">Handling</label>
-              <input type="number" id="handling" placeholder="Handling" required>
+              <input class="inputStat" type="number" id="handling" placeholder="Handling" required>
             </div>
             <div class="stat">
               <label for="kicking">Kicking</label>
-              <input type="number" id="kicking" placeholder="Kicking" required>
+              <input class="inputStat" type="number" id="kicking" placeholder="Kicking" required>
             </div>
             <div class="stat">
               <label for="reflexes">Reflexes</label>
-              <input type="number" id="reflexes" placeholder="Reflexes" required>
+              <input class="inputStat" type="number" id="reflexes" placeholder="Reflexes" required>
             </div>
             <div class="stat">
               <label for="speed">Speed</label>
-              <input type="number" id="speed" placeholder="Speed" required>
+              <input class="inputStat" type="number" id="speed" placeholder="Speed" required>
             </div>
             <div class="stat">
               <label for="positioning">Positioning</label>
-              <input type="number" id="positioning" placeholder="Positioning" required>
+              <input class="inputStat" type="number" id="positioning" placeholder="Positioning" required>
             </div>
           </div>
-          <button type="submit" id="add">Ajouter</button>
+          <div class="add">
+            <button type="submit" id="add">Ajouter</button>
+          </div>
+
         </div>
       </form>
     </section>
@@ -110,8 +125,8 @@
               <div class="infos">
                 <span class="ratingJoueur"></span>
                 <span class="positionJoueur"></span>
-                <img class="flagImg" src="" width="15rem">
-                <img class="logoImg" src="" width="15rem">
+                <img class="flagImg" src="" alt="" width="15rem">
+                <img class="logoImg" src="" alt="" width="15rem">
               </div>
               <div class="img">
                 <img class="photoImg" src="" alt="" width="100%">
@@ -141,8 +156,8 @@
               <div class="infos">
                 <span class="ratingJoueur"></span>
                 <span class="positionJoueur"></span>
-                <img class="flagImg" src="" width="15rem">
-                <img class="logoImg" src="" width="15rem">
+                <img class="flagImg" src="" alt="" width="15rem">
+                <img class="logoImg" src="" alt="" width="15rem">
               </div>
               <div class="img">
                 <img class="photoImg" src="" alt="" width="100%">
@@ -172,8 +187,8 @@
               <div class="infos">
                 <span class="ratingJoueur"></span>
                 <span class="positionJoueur"></span>
-                <img class="flagImg" src="" width="15rem">
-                <img class="logoImg" src="" width="15rem">
+                <img class="flagImg" src="" alt="" width="15rem">
+                <img class="logoImg" src="" alt="" width="15rem">
               </div>
               <div class="img">
                 <img class="photoImg" src="" alt="" width="100%">
@@ -208,8 +223,8 @@
               <div class="infos">
                 <span class="ratingJoueur"></span>
                 <span class="positionJoueur"></span>
-                <img class="flagImg" src="" width="15rem">
-                <img class="logoImg" src="" width="15rem">
+                <img class="flagImg" src="" alt="" width="15rem">
+                <img class="logoImg" src="" alt="" width="15rem">
               </div>
               <div class="img">
                 <img class="photoImg" src="" alt="" width="100%">
@@ -241,8 +256,8 @@
               <div class="infos">
                 <span class="ratingJoueur"></span>
                 <span class="positionJoueur"></span>
-                <img class="flagImg" src="" width="15rem">
-                <img class="logoImg" src="" width="15rem">
+                <img class="flagImg" src="" alt="" width="15rem">
+                <img class="logoImg" src="" alt="" width="15rem">
               </div>
               <div class="img">
                 <img class="photoImg" src="" alt="" width="100%">
@@ -274,8 +289,8 @@
               <div class="infos">
                 <span class="ratingJoueur"></span>
                 <span class="positionJoueur"></span>
-                <img class="flagImg" src="" width="15rem">
-                <img class="logoImg" src="" width="15rem">
+                <img class="flagImg" src="" alt="" width="15rem">
+                <img class="logoImg" src="" alt="" width="15rem">
               </div>
               <div class="img">
                 <img class="photoImg" src="" alt="" width="100%">
@@ -311,7 +326,7 @@
                   <span class="ratingJoueur"></span>
                   <span class="positionJoueur"></span>
                   <img class="flagImg" src="" width="15%">
-                  <img class="logoImg" src="" width="15rem">
+                  <img class="logoImg" src="" alt="" width="15rem">
                 </div>
                 <div class="img">
                   <img class="photoImg" src="" alt="" width="100%">
@@ -343,8 +358,8 @@
                 <div class="infos">
                   <span class="ratingJoueur"></span>
                   <span class="positionJoueur"></span>
-                  <img class="flagImg" src="" width="15rem">
-                  <img class="logoImg" src="" width="15rem">
+                  <img class="flagImg" src="" alt="" width="15rem">
+                  <img class="logoImg" src="" alt="" width="15rem">
                 </div>
                 <div class="img">
                   <img class="photoImg" src="" alt="" width="100%">
@@ -378,15 +393,15 @@
                 <div class="infos">
                   <span class="ratingJoueur"></span>
                   <span class="positionJoueur"></span>
-                  <img class="flagImg" src="" width="15rem">
-                  <img class="logoImg" src="" width="15rem">
+                  <img class="flagImg" src="" alt="" width="15rem">
+                  <img class="logoImg" src="" alt="" width="15rem">
                 </div>
                 <div class="img">
                   <img class="photoImg" src="" alt="" width="100%">
                 </div>
               </div>
               <div class="nomStat">
-                <p class="nomJoueur" style="font-size: 80%;  margin-bottom: 0;"></p>
+                <p class="nomJoueur"></p>
                 <div class="stats">
                   <span class="paceJoueur"></span>
                   <span class="shootingJoueur"></span>
@@ -411,8 +426,8 @@
                 <div class="infos">
                   <span class="ratingJoueur"></span>
                   <span class="positionJoueur"></span>
-                  <img class="flagImg" src="" width="15rem">
-                  <img class="logoImg" src="" width="15rem">
+                  <img class="flagImg" src="" alt="" width="15rem">
+                  <img class="logoImg" src="" alt="" width="15rem">
                 </div>
                 <div class="img">
                   <img class="photoImg" src="" alt="" width="100%">
@@ -447,8 +462,8 @@
             <div class="infos">
               <span class="ratingJoueur"></span>
               <span class="positionJoueur"></span>
-              <img class="flagImg" src="" width="15rem">
-              <img class="logoImg" src="" width="15rem">
+              <img class="flagImg" src="" alt="" width="15rem">
+              <img class="logoImg" src="" alt="" width="15rem">
             </div>
             <div class="img">
               <img class="photoImg" src="" alt="" width="100%">
@@ -482,8 +497,8 @@
           <div class="infos">
             <span class="ratingJoueur"></span>
             <span class="positionJoueur"></span>
-            <img class="flagImg" src="" width="15rem">
-            <img class="logoImg" src="" width="15rem">
+            <img class="flagImg" src="" alt="" width="15rem">
+            <img class="logoImg" src="" alt="" width="15rem">
           </div>
           <div class="img">
             <img class="photoImg" src="" alt="" width="100%">
@@ -522,8 +537,8 @@
           <div class="infos">
             <span class="ratingJoueur"></span>
             <span class="positionJoueur"></span>
-            <img class="flagImg" src="" width="15rem">
-            <img class="logoImg" src="" width="15rem">
+            <img class="flagImg" src="" alt="" width="15rem">
+            <img class="logoImg" src="" alt="" width="15rem">
           </div>
           <div class="img">
             <img class="photoImg" src="" alt="" width="100%">
@@ -562,8 +577,8 @@
           <div class="infos">
             <span class="ratingJoueur"></span>
             <span class="positionJoueur"></span>
-            <img class="flagImg" src="" width="15rem">
-            <img class="logoImg" src="" width="15rem">
+            <img class="flagImg" src="" alt="" width="15rem">
+            <img class="logoImg" src="" alt="" width="15rem">
           </div>
           <div class="img">
             <img class="photoImg" src="" alt="" width="100%">
@@ -602,8 +617,8 @@
           <div class="infos">
             <span class="ratingJoueur"></span>
             <span class="positionJoueur"></span>
-            <img class="flagImg" src="" width="15rem">
-            <img class="logoImg" src="" width="15rem">
+            <img class="flagImg" src="" alt="" width="15rem">
+            <img class="logoImg" src="" alt="" width="15rem">
           </div>
           <div class="img">
             <img class="photoImg" src="" alt="" width="100%">
@@ -642,8 +657,8 @@
           <div class="infos">
             <span class="ratingJoueur"></span>
             <span class="positionJoueur"></span>
-            <img class="flagImg" src="" width="15rem">
-            <img class="logoImg" src="" width="15rem">
+            <img class="flagImg" src="" alt="" width="15rem">
+            <img class="logoImg" src="" alt="" width="15rem">
           </div>
           <div class="img">
             <img class="photoImg" src="" alt="" width="100%">
@@ -682,8 +697,8 @@
           <div class="infos">
             <span class="ratingJoueur"></span>
             <span class="positionJoueur"></span>
-            <img class="flagImg" src="" width="15rem">
-            <img class="logoImg" src="" width="15rem">
+            <img class="flagImg" src="" alt="" width="15rem">
+            <img class="logoImg" src="" alt="" width="15rem">
           </div>
           <div class="img">
             <img class="photoImg" src="" alt="" width="100%">
@@ -722,8 +737,8 @@
           <div class="infos">
             <span class="ratingJoueur"></span>
             <span class="positionJoueur"></span>
-            <img class="flagImg" src="" width="15rem">
-            <img class="logoImg" src="" width="15rem">
+            <img class="flagImg" src="" alt="" width="15rem">
+            <img class="logoImg" src="" alt="" width="15rem">
           </div>
           <div class="img">
             <img class="photoImg" src="" alt="" width="100%">
