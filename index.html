@@ -9,7 +9,10 @@
 </head>
 
 <body>
-  <h1 class="titre"> FUT Champions </h1>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <img src="./images/fut-logo-design-inspiration-for-a-unique-identity-modern-elegance-and-creative-design-watermark-your-success-with-the-striking-this-logo-vector-removebg-preview.png" alt="" width="90px">
+    <h1 class="titre"> FUT Champions </h1>
+  </div>
   <section class="grid-container">
     <section class="section" id="formulaire">
       <form class="form">
@@ -104,9 +107,9 @@
               <input class="inputStat" type="number" id="positioning" placeholder="Positioning" required>
             </div>
           </div>
-          <div class="add">
+          <!-- <div class="add"> -->
             <button type="submit" id="add">Ajouter</button>
-          </div>
+          <!-- </div> -->
 
         </div>
       </form>
@@ -313,7 +316,7 @@
 
 
       <div style="display: flex; justify-content: space-between; ">
-        <div style="display:flex; gap:4rem ">
+        <div class="gauche">
           <div class="joueur" id="carteLB" >
             <img class="imgCarte" src="./images/carte.png" alt="carte">
             <div class="informations">
@@ -325,7 +328,7 @@
                 <div class="infos">
                   <span class="ratingJoueur"></span>
                   <span class="positionJoueur"></span>
-                  <img class="flagImg" src="" width="15%">
+                  <img class="flagImg" src="" width="15rem">
                   <img class="logoImg" src="" alt="" width="15rem">
                 </div>
                 <div class="img">
@@ -381,7 +384,7 @@
         </div>
 
 
-        <div style="display:flex;gap:4rem ">
+        <div class="droit">
           <div class="joueur" id="carteCBR" style="transform:translateY(20px) ;">
             <img class="imgCarte" src="./images/carte.png" alt="carte">
             <div class="informations">

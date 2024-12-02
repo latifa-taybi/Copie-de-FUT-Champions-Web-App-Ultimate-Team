@@ -3,7 +3,7 @@ const position = document.getElementById("position");
 
 //-------------------------Formulaire de staatistiques des joueurs--------------------------------------//
 
-function formStatistique() {
+function toggleStatistique() {
     const statistiqueGK = document.querySelector(".statistiqueGK")
     const statistique = document.querySelector(".statistique")
     if (position.value === "GK") {
@@ -14,7 +14,7 @@ function formStatistique() {
         statistique.style.display = 'grid';
     }
 }
-position.addEventListener('change', formStatistique)
+position.addEventListener('change', toggleStatistique)
 
 
 
@@ -55,23 +55,32 @@ const dribbling = document.getElementById("dribbling");
 const defending = document.getElementById("defending");
 const physical = document.getElementById("physical");
 
-
-function validation() {
-    const stats = [diving, handling, kicking, reflexes, speed, positioning, pace, shooting, passing, dribbling, defending, physical];
-    for (let i = 0; i < stats.length; i++)  {
-        if (stats[i].value < 1 || stats[i].value > 99) {
-            alert("Toutes les valeurs doivent être entre 1 et 99 !");
-            return false;
+function validationForm() {
+    if (position==='GK'){
+        const statsGK = [diving, handling, kicking, reflexes, speed, positioning];
+        for (let i = 0; i < statsGK.length; i++)  {
+            if (statsGK[i].value < 1 || statsGK[i].value > 99) {
+                alert("Toutes les valeurs doivent être entre 1 et 99 !");
+                return false;
+            }
+        } 
+    }else{
+        const stats = [pace, shooting, passing, dribbling, defending, physical];
+        for (let i = 0; i < stats.length; i++)  {
+            if (stats[i].value < 1 || stats[i].value > 99) {
+                alert("Toutes les valeurs doivent être entre 1 et 99 !");
+                return false;
+            }
         }
     }
     return true; 
+
 }
 
 
 //-----------------------------Fonction d'ajout des joureurs---------------------------------------------//
 
 function ajout(){
-
     const name = document.getElementById("name");
     const nomExiste = document.querySelectorAll('.nomJoueur');
     for (let i = 0; i < nomExiste.length; i++) {
@@ -80,13 +89,12 @@ function ajout(){
             return;
         }
     }
-    validation()
+
     counter[position.value]++;
     if (counter[position.value] > 1) {
         const carteReserve = document.querySelectorAll(".carteReserve")
         for (let i = 0; i < carteReserve.length; i++) {
             const card = carteReserve[i];
-            console.log('bvfecs')
             const infos = card.querySelector(".infos")
             const ratingJoueur = infos.querySelector('.ratingJoueur')
             const positionJoueur = infos.querySelector('.positionJoueur')
@@ -221,7 +229,9 @@ add.addEventListener('click',(event)=>{
     if(add.textContent === "modifier"){
         add.textContent = "ajouter"
     }
-    
+    if (!validationForm()) {
+        return;
+    }
     ajout();
 })
 
@@ -314,7 +324,7 @@ edits.forEach(edit=>{
         rating.value = ratingJoueur;
         position.value = positionJoueur;
         
-        formStatistique() 
+        toggleStatistique() 
         if (positionJoueur === "GK") {
             const divingJoueur = joueur.querySelector(".divingJoueur").textContent;
             const handlingJoueur = joueur.querySelector(".handlingJoueur").textContent;
